@@ -1,0 +1,26 @@
+/**
+* :: Developer: Md. Abul Kalam Azad
+*/
+*{
+    margin:0;
+    padding:0;
+    text-align: center;
+}
+body{
+    min-height:300vh;
+}
+header{
+    border-bottom: 1px solid #e3e3e3;
+    padding: 30px 0px;
+    margin-bottom: 30px;
+    background: #e3e3e3;
+}
+footer{
+    border-top: 1px solid #e3e3e3;
+    position:fixed;
+    left:0;
+    right:0;
+    bottom:0;
+    padding: 30px 0px;
+    background: #0085BA;
+}
