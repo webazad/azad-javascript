@@ -31,15 +31,23 @@
 body {
   background: blue;
   text-align: center; }
+  body main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; }
   body h1 {
     color: var(--text);
-    background: tomato;
+    background: black;
     padding: 2rem 0; }
   body section {
-    background: black;
+    background: white;
+    color: black;
     padding: 2rem 1rem; }
   body footer {
+    margin-top: auto;
     padding: 2rem 0;
-    color: black;
-    background: #e3e3e3; }
+    color: white;
+    background: black; }
 
+
+/*# sourceMappingURL=main.css.map*/

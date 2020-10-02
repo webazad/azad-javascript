@@ -1,6 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     entry: './src/scripts/index.js',
@@ -14,6 +15,7 @@ module.exports = {
         open: true,
         compress: true
     },
+    devtool: 'source-map',
     module: {
         rules: [
             {
@@ -47,6 +49,7 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             template: "./src/index.html"
-        })
+        }),
+        new CleanWebpackPlugin()
     ]
 }
