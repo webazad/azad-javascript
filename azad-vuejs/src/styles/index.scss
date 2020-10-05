@@ -1,0 +1,31 @@
+@import "vars/_colors";
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: blue;
+    text-align: center;
+
+    main {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+    h1 {
+        color: var(--text);
+        background: black;
+        padding: 2rem 0;
+    }
+    section {
+        background: white;
+        color: black;
+        padding: 2rem 1rem;
+    }
+    footer {
+        margin-top: auto;
+        padding: 2rem 0;
+        color: white;
+        background: black;
+    }
+}
