@@ -3,6 +3,11 @@
     <Header/>
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- <app-hello msg="Welcome to Your Vue.js App"/> -->
+    <button @click="ComponentToRender='About'">About</button>
+    <button @click="ComponentToRender='Contact'">Contact</button>
+    <keep-alive>
+      <component :is="ComponentToRender"></component>
+    </keep-alive>    
     <Footer/>
   </div>
 </template>
@@ -10,14 +15,23 @@
 <script>
 // import HelloWorld from './components/HelloWorld.vue';
 import Header from './components/Header.vue';
-import Footer from './components/Footer.vue';
+import Contact from './components/Contact.vue';
+import About from './components/About.vue';
+// import Footer from './components/Footer.vue';
 
 export default {
-  name: 'App',
+  // name: 'App',
+  data(){
+    return {
+      ComponentToRender: 'Contact'
+    }
+  },
   components: {
   //  'app-hello': HelloWorld,
    Header,
-   Footer
+   Contact,
+   About,
+  //  Footer
    }
 }
 </script>
@@ -32,7 +46,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: white;
+  color: red;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
