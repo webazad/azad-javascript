@@ -1,5 +1,13 @@
 <template>
   <footer class="azad-footer">
+    <div class="">
+      <div class="">
+        <div v-for="(blog,index) in blogs" :key="index">
+          <h2>{{blog.title}}</h2>
+          <p>{{blog.body}}</p>
+        </div>
+      </div>
+    </div>
     <div class="footer-top">
       <div class="">
       <h1>Logo</h1>
@@ -44,9 +52,31 @@
   </footer>
 </template>
 
+<script>
+
+export default {
+  data(){
+    return {
+      blogs: [
+
+      ]
+    }
+  },
+  created(){
+    this.$http.get('https://jsonplaceholder.typicode.com/posts').then((data)=>{
+      // console.log(data);
+      this.blogs = data.body.slice(0,10)
+    })
+  }
+}
+</script>
+
 <style>
 footer {
   margin-top: auto;  
+}
+h2 {
+  color: red;
 }
 .footer-top {
   background: #e3e3e3;
