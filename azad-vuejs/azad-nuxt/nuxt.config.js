@@ -1,3 +1,4 @@
+// import axios from 'axios'
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
@@ -40,6 +41,20 @@ export default {
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {},
+  // generate: {
+  //   routes:()=>{
+  //     return axios.get('http://localhost/news/wp-json/wp/v2/posts' + params.id).then((res)=>{
+  //     return {
+  //         res.data.map((post)=>{
+  //           return {
+  //             route: 'blog/' + post.slug,
+  //             payload: post
+  //           }
+  //         })
+  //     }
+  //   })
+  //   }
+  // },
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {},

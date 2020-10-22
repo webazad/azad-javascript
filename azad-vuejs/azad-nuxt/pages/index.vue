@@ -1,47 +1,47 @@
 <template>
-  <div class="container">
+  <div class="big-wrapper">
     <div>
-      <Logo />
-      <h1 class="title">
-        azad-nuxt
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+      <h4>Homes</h4>
+      <div class="" v-for="post in posts" :key="post.id">
+        {{post.title.rendered}}
+        <div class="" v-html="post.excerpt.rendered"></div>
+        <nuxt-link :to="{name:'blog-slug',params:{slug:post.slug, id:post.id}}">Read more</nuxt-link>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+import axios from 'axios'
+export default {
+  fetch({store}){
+    return axios.get('http://localhost/news/wp-json/wp/v2/posts').then((res)=>{
+      store.commit('frontPagePosts',res.data)
+    }).catch((error)=>{
+      console.log(error)
+    })
+  },
+  computed:{
+    posts(){
+      return this.$store.state.posts
+    }
+  }
+}
 </script>
 
-<style>
-.container {
+<style lang="scss">
+.big-wrapper {
   margin: 0 auto;
-  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  h4 {
+    color: blue;
+  }
 }
 
-.title {
+.azad-title {
   font-family:
     'Quicksand',
     'Source Sans Pro',
@@ -57,17 +57,5 @@ export default {}
   font-size: 100px;
   color: #35495e;
   letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
 }
 </style>
