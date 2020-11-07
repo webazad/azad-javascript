@@ -1,0 +1,1 @@
+{"version":3,"file":"main-style.min.css","sources":["main-style.scss"],"sourcesContent":["body{\r\n    color: #ffffff;\r\n    h2 {\r\n        color: black;\r\n    }\r\n}"],"names":[],"mappings":"AAAA,AAAA,IAAI,AAAA,CACA,KAAK,CAAE,OAAO,CAIjB,AALD,AAEI,IAFA,CAEA,EAAE,AAAC,CACC,KAAK,CAAE,KAAK,CACf"}

@@ -36,7 +36,7 @@
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" app class="indigo">
         <v-list>
-          <v-list-item>
+          <!-- <v-list-item>
             <v-list-item-content>
               <v-img
                 alt="Vuetify Logo"
@@ -47,7 +47,7 @@
                 width="40"
               />
             </v-list-item-content>
-          </v-list-item>
+          </v-list-item> -->
           <v-list-item  class="white--text" v-for="(item, index) in items" :key="index" router :to="item.route">
             <v-list-item-action>
               <v-list-item-icon>
@@ -62,6 +62,9 @@
     </v-navigation-drawer>
     <v-main>
       <HelloWorld/>
+      <v-content class="mx-4">
+        <router-view></router-view>
+      </v-content>
     </v-main>
   </v-app>
 </template>
@@ -84,10 +87,16 @@ export default {
         icon: 'mdi-home', text: 'Dashboard', route: '/'
       },
       {
-        icon: 'mdi-home', text: 'Settings', route: '/about'
+        icon: 'mdi-home', text: 'About', route: '/about'
       },
       {
-        icon: 'mdi-home', text: 'Settings', route: '/settings'
+        icon: 'mdi-home', text: 'Dashboard', route: '/dashboard'
+      },
+      {
+        icon: 'mdi-home', text: 'Team', route: '/team'
+      },
+      {
+        icon: 'mdi-home', text: 'Projects', route: '/projects'
       }
     ]
   })
